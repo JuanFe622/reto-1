@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <!-- Compiled and minified JavaScript -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Importacion JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<title>Document</title>
+</head>
+<body style="background-color:#F0F3F4;">
+	<div class="container section">
+
+		 <nav class="orange">
+		    <div class="nav-wrapper">
+		      <a href="#!" class="brand-logo">
+		      	<img src="img/7.png" class="circle" width="65" height="auto" alt="">
+		      </a>
+		      <ul class="right hide-on-med-and-down">
+		        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+		        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+		        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+		        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+		      </ul>
+		    </div>
+  		</nav>
+
+  		<form id="formid">
+
+			<div class="section">
+
+	  			<div class="row">
+	  				<div class=" input-field col s6">
+	  					<i class="material-icons prefix">face</i>
+	  					<input type="text" name="user_name" id="user_name" class="icon-prefix validate">
+	  					<label for="user_name">Nombre de usuario</label>
+	  			    </div>
+
+	  			    <div class="input-field col col s6">
+	  			    	<select name="imgSelect" id="imgSelect" class="browser-default" onchange="putImg()">
+	  			    		<option value="" disabled selected>Seleccione una opción</option>
+	  			    		<option value="1">Grupo de Imagenes 1</option>
+	  			    		<option value="2">Grupo de Imagenes 2</option>
+	  			    		<option value="3">Grupo de Imagenes 3</option>
+	  			    	</select>
+	  			    </div>
+
+	  			</div>
+
+  			</div>	
+
+  			<div class="section">
+	  			<div class="row">
+
+	  				<div class="col s2">
+	  					<label class="checkeable">
+	  						<input type="checkbox" name="imagenesSeleccionadas[]" value="1" id="1">
+	  						<img id="img0" class="responsive-img circle" src="img/unk.png" alt="">
+	  					</label>
+	  				</div>
+
+	  				<div class="col s2">
+	  					<label class="checkeable">
+	  						<input type="checkbox" name="imagenesSeleccionadas[]" value="2" id="2">
+	  						<img id="img1" class="responsive-img circle" src="img/unk.png" alt="">
+	  					</label>
+	  				</div>
+
+	  				<div class="col s2">
+	  					<label class="checkeable">
+	  						<input type="checkbox" name="imagenesSeleccionadas[]" value="3" id="3">
+	  						<img id="img2" class="responsive-img circle" src="img/unk.png" alt="">
+	  					</label>
+	  				</div>
+
+	  				<div class="col s2">
+	  					<label class="checkeable">
+	  						<input type="checkbox" name="imagenesSeleccionadas[]" value="4" id="4">
+	  						<img id="img3" class="responsive-img circle" src="img/unk.png" alt="">
+	  					</label>
+	  				</div>
+
+	  				<div class="col s2">
+	  					<label class="checkeable">
+	  						<input type="checkbox" name="imagenesSeleccionadas[]" value="5" id="5">
+	  						<img id="img4" class="responsive-img circle" src="img/unk.png" alt="">
+	  					</label>
+	  				</div>
+
+	  				<div class="col s2">
+	  					<label class="checkeable">
+	  						<input type="checkbox" name="imagenesSeleccionadas[]" value="6" id="6">
+	  						<img id="img5" class="responsive-img circle" src="img/unk.png" alt="">
+	  					</label>
+	  				</div>
+
+	  			</div>
+  			</div>	
+
+  			<div class="section">
+	  			<div class="row center">
+	  				<button class="btn waves-effect waves-light orange" id="enviar">Aceptar
+	  					<i class="material-icons right">send</i>
+	  				</button>
+	  			</div>
+  			</div>
+		</form>
+
+		<div class="section">
+			<div class="row center">
+				<!--  Lista Desplegable -->
+				<div class="input-field col s6">
+		  			<select name="algortimoSeleccionado" id="algortimoSeleccionado" class="browser-default">
+		  			    <option value="" disabled selected>Seleccione una opción</option>
+		  			    <option value="1">Burbuja</option>
+		  			    <option value="2">Selección</option>
+		  			    <option value="3">Insercción</option>
+		  			</select>
+	  			</div>
+
+	  			<div class="input-field col s3">
+                    <label>
+                        <input name="group1" type="radio" id="tipoOrdAlg1" checked   />
+                        <span>Descendente</span>
+                    </label>
+                </div>
+
+                <div class="input-field col s3">
+                    <label>
+                        <input name="group1" type="radio" id="tipoOrdAlg2" checked  />
+                        <span>Ascendente</span>
+                    </label>
+                </div>
+
+			</div>
+		</div>
+
+		<div class="section">
+	  		<div class="row center">
+	  			<button class="btn waves-effect waves-light orange" onclick="ordenarArray()">Ordenar
+	  				<i class="material-icons right">upgrade</i>
+	  			</button>
+	  		</div>
+  		</div>
+
+	</div>
+
+	<script src="js/algoritmosOrdenamiento.js"></script>
+		
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+	<!-- Codigo JQuery -->
+<script type="text/JavaScript">
+	/* Metodo que valida si ya se cargo todo el DOM de una web*/
+	$(document).ready(function () {
+		/* Busca el metadato qye coincide con el nombre '#enviar
+			coinicide el elemento button y se le llama el metodo click*/
+		$('#enviar').click(function () {
+			let selected = '';
+			$('#formid input[type = checkbox]').each(function () {
+				if (this.checked) {
+					/* Recupero el value del checkbox seleccionado*/
+					selected += $(this).val() + ', ';
+				}
+			});
+			//onchange="putImg()"
+			/* Finaliza metodo que recorre todos los elementos del mismo tipo*/
+			if (selected != '') {
+				alert('El usuario selecciono las imagenes: ' + selected);
+			}else{
+				alert('No ha seleccionado imagenes');
+				return false;
+			}
+		});
+	});
+</script>
+	
+
+</html>
